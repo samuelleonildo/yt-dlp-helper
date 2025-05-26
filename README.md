@@ -8,16 +8,21 @@ a more intuitive way to download using yt-dlp
 - ffmpeg _<span style="color:gray;">(for .opus converting)</span>_
 - Write permission to the destination directory
 
-## How to run the program
+## Installation
 1. Clone or download the repository
+
+    ```bash
+    git clone https://github.com/samuelleonildo/yt-dlp-helper.git
+    cd yt-dlp-helper
+    ```
 
 2. Compile the .c file by running:
 
     ```bash
     gcc yt-dlp-helper.c -o yt-dlp-helper
     ```
-    > I recommend copying the executable program to `/usr/local/bin/` <br>
-    > so you can run it from any directory
+    > I recommend moving the executable program to `/usr/local/bin/` <br>
+    > using `sudo mv yt-dlp-helper /usr/local/bin/` to run it from any directory
 
     <br>
 
@@ -29,7 +34,7 @@ a more intuitive way to download using yt-dlp
 
 ## Example Usage
 
-- Help
+- ### Show help
 
     ```bash
     ./yt-dlp-helper --help
@@ -40,7 +45,7 @@ a more intuitive way to download using yt-dlp
     ```
     <br>
 
-- Version
+- ### Show version
 
     ```bash
     ./yt-dlp-helper --version
@@ -51,21 +56,21 @@ a more intuitive way to download using yt-dlp
     ```
     <br>
 
-- Download audio only
+- ### Download audio only
 
     ```bash
     ./yt-dlp-helper audio "https://www.youtube.com/watch?v=example" "~/Music"
     ```
     <br>
 
-- Download video with custom file name
+- ### Download video with custom file name
 
     ```bash
     ./yt-dlp-helper video "https://www.youtube.com/watch?v=example" "~/Videos" "my_video"
     ```
     <br>
 
-- Download playlist
+- ### Download playlist
 
     ```bash
     ./yt-dlp-helper audio "https://www.youtube.com/playlist?list=PLxxxxxx" "~/Music"
@@ -86,3 +91,13 @@ a more intuitive way to download using yt-dlp
 - Audio files are downloaded in .opus format
 
 - Videos are downloaded in the format yt-dlp determines to be best
+
+## License
+
+This project is licensed under the **MIT License**
+
+## Author
+
+samuelleonildo
+<br>
+[github.com/samuelleonildo](https://github.com/samuelleonildo/)
