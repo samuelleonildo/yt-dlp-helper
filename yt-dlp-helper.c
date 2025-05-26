@@ -27,6 +27,12 @@ int is_valid_url(const char* url)
 }
 
 
+int is_playlist_url(const char* url)
+{
+    return (strstr(url, "list=") != NULL);
+}
+
+
 int main(int argc, char* argv[])
 {
     if (argc != 4 && argc != 5)
@@ -39,6 +45,12 @@ int main(int argc, char* argv[])
     if (system("command -v yt-dlp > /dev/null 2>&1") != 0)
     {
         printf("error: yt-dlp not found. Please install yt-dlp first.\n");
+        return 1;
+    }
+    // checking if ffmpeg is installed
+    if (system("command -v ffmpeg > /dev/null 2>&1") != 0)
+    {
+        printf("error: ffmpeg not found. Please install ffmpeg first.\n");
         return 1;
     }
 
@@ -61,6 +73,11 @@ int main(int argc, char* argv[])
     if (!is_valid_url(url))
     {
         printf("invalid URL: \"%s\". URL must start with http:// or https://\n", url);
+        return 1;
+    }
+    if (custom_name && is_playlist_url(url))
+    {
+        printf("error: custom_name cannot be used when downloading a playlist.\n");
         return 1;
     }
 
