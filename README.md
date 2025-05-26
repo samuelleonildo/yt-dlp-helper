@@ -29,6 +29,28 @@ a more intuitive way to download using yt-dlp
 
 ## Example Usage
 
+- Help
+
+    ```bash
+    ./yt-dlp-helper --help
+    ```
+    or
+    ```bash
+    ./yt-dlp-helper -h
+    ```
+    <br>
+
+- Version
+
+    ```bash
+    ./yt-dlp-helper --version
+    ```
+    or
+    ```bash
+    ./yt-dlp-helper -v
+    ```
+    <br>
+
 - Download audio only
 
     ```bash
@@ -49,8 +71,9 @@ a more intuitive way to download using yt-dlp
     ./yt-dlp-helper audio "https://www.youtube.com/playlist?list=PLxxxxxx" "~/Music"
     ```
 
-    > When downloading a playlist, do **not** put a custom name, the program will <br>
-    > overwrite it in every download and only the last one will be available for you
+    > When downloading a playlist, do **not** put a custom name, the program ignores it; <br>
+    > otherwise, it would be overwritten in every download and only the last one would <br>
+    > be available for you
 
     > The program will create a folder `/path/to/save/[playlist name]/` and save <br>
     > all playlist content inside it, with filenames starting with the playlist index.
