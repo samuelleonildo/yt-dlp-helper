@@ -1,12 +1,19 @@
 # yt-dlp-helper
-a more intuitive way to download using yt-dlp
+A lightweight open-source C wrapper for yt-dlp that simplifies YouTube media downloads. <br>
+Custom filenames | Playlist support | Auto-directory creation.
 
 ## Requirements
 - Linux
-- gcc compiler
-- yt-dlp
-- ffmpeg _<span style="color:gray;">(for .opus converting)</span>_
-- Write permission to the destination directory
+- Build tools: `gcc`
+- Depedencies:
+    - yt-dlp (latest)
+
+    - ffmpeg _(for audio conversion to .opus)_
+    
+    > Tip: install dependencies with:
+    > ```bash
+    > sudo apt install yt-dlp ffmpeg  # Debian/Ubuntu
+    > ```
 
 ## Installation
 1. Clone or download the repository
@@ -24,51 +31,34 @@ a more intuitive way to download using yt-dlp
     > I recommend moving the executable program to `/usr/local/bin/` <br>
     > using `sudo mv yt-dlp-helper /usr/local/bin/` to run it from any directory
 
-    <br>
+## Usage
 
-3. Run the executable following the format:
+- ### Basic Syntax
 
-    ```bash
-    ./yt-dlp-helper [video|audio] "URL" "path/to/save/" [optional_name]
+    ``` bash
+    yt-dlp-helper [video|audio] "URL" "path/to/save/" [optional_name]
     ```
 
-## Example Usage
+- ### Examples
 
-- ### Show help
-
-    ```bash
-    ./yt-dlp-helper --help
-    ```
-    or
-    ```bash
-    ./yt-dlp-helper -h
-    ```
-    <br>
-
-- ### Show version
-
-    ```bash
-    ./yt-dlp-helper --version
-    ```
-    or
-    ```bash
-    ./yt-dlp-helper -v
-    ```
-    <br>
-
-- ### Download audio only
-
-    ```bash
-    ./yt-dlp-helper audio "https://www.youtube.com/watch?v=example" "~/Music"
-    ```
-    <br>
-
-- ### Download video with custom file name
-
-    ```bash
-    ./yt-dlp-helper video "https://www.youtube.com/watch?v=example" "~/Videos" "my_video"
-    ```
-    <br>
+    <table style="border:none; border-collapse: collapse; width: 100%;">
+        <tr>
+            <td style="border:none; padding-right: 40px;"><strong>Command</strong></td>
+            <td style="border:none;"><strong>Description</strong></td>
+        </tr>
+        <tr>
+            <td style="border:none; padding-right: 40px;"><code>yt-dlp-helper --help</code></td>
+            <td style="border:none;">Show help message</td>
+        </tr>
+        <tr>
+            <td style="border:none; padding-right: 40px;"><code>yt-dlp-helper audio "https://youtu.be/..." "~/Music"</code></td>
+            <td style="border:none;">Downloads audio (.opus)</td>
+        </tr>
+        <tr>
+            <td style="border:none; padding-right: 30px;"><code>yt-dlp-helper video "https://youtu.be/..." "~/Videos" "my_video"</code></td>
+            <td style="border:none;">Saves video with custom name</td>
+        </tr>
+    </table>  
 
 - ### Download playlist
 
@@ -84,13 +74,10 @@ a more intuitive way to download using yt-dlp
     > all playlist content inside it, with filenames starting with the playlist index.
 
 ## Notes
-- Ensure you have write permission for the specified save directory
-
-- This program creates the destination directory if it doesn't exist
-
-- Audio files are downloaded in .opus format
-
+- Auto-creates missing directories
+- Audio defaults to .opus
 - Videos are downloaded in the format yt-dlp determines to be best
+- Ensure write permission for target directories
 
 ## License
 
